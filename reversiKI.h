@@ -1,5 +1,4 @@
 /**
- * Praktikum Informatik 1 MMXXIII
  *
  * @file reversiKI.h
  *
