@@ -1,8 +1,6 @@
  /**
   * @mainpage Reversi
   *
-  * Dokumentation des Spiels Reversi im Rahmen des Praktikums Informatik 1.
-  *
   */
 
 #include <iostream>
@@ -162,7 +160,7 @@ bool aufSpielfeld(const int posX, const int posY)
  * @param aktuellerSpieler Der aktuelle Spieler
  * @param posX Zu ueberpruefende Spalte
  * @param posY Zu ueberpruefende Zeile
- * @return gibt true zurück, wenn ein übergebener Zug gültig ist, ansonsten false
+ * @return gibt true zurÃ¼ck, wenn ein Ã¼bergebener Zug gÃ¼ltig ist, ansonsten false
  */
 bool zugGueltig(const int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpieler, const int posX, const int posY)
 {
@@ -263,7 +261,7 @@ void zugAusfuehren(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpiel
 }
 
 /**
- * @brief ueberprueft wie viele gueltige Zuege ein Spieler zur Verfügung hat
+ * @brief ueberprueft wie viele gueltige Zuege ein Spieler zur VerfÃ¼gung hat
  * @param spielfeld das aktuelle Spielfeld
  * @param aktuellerSpieler Der Spieler der gerade am Zug ist
  * @return Zaehlt ueber die beiden for-Schleifen, wie viele gueltige Zuege moeglich sind und gibt den Counter wieder
@@ -324,13 +322,13 @@ bool menschlicherZug(int spielfeld[GROESSE_Y][GROESSE_X], const int aktuellerSpi
 		posX = (int)eingabe[0] % 32 - 1;
 		posY = (int)eingabe[1] - 49;
 
-		// wenn der Zug gültig ist, wird die Schleife sofort verlassen und es wird anschließend der entsprechende Zug ausgeführt
+		// wenn der Zug gÃ¼ltig ist, wird die Schleife sofort verlassen und es wird anschlieÃŸend der entsprechende Zug ausgefÃ¼hrt
 		if (zugGueltig(spielfeld, aktuellerSpieler, posX, posY))
 		{
 			//accept turn;
 			break;
 		}
-		// wenn der Zug nicht gültig ist, wird dem aktuellen Spieler über die Konsole eine entsprechende Mitteilung ausgegeben
+		// wenn der Zug nicht gÃ¼ltig ist, wird dem aktuellen Spieler Ã¼ber die Konsole eine entsprechende Mitteilung ausgegeben
 		else
 		{
 			std::cout << std::endl << "Ungueltige Eingabe !" << std::endl;
@@ -362,14 +360,14 @@ void spielen(const int spielerTyp[2])
 	while (moeglicheZuege(spielfeld, gegner) + moeglicheZuege(spielfeld, aktuellerSpieler) > 0)
 	{
 		// zeigeSpielfeld(spielfeld);
-		// Wenn der aktuelle Spieler ein Mensch ist, wird dementsprechend die Funktion menschlicher Zug ausgeführt
+		// Wenn der aktuelle Spieler ein Mensch ist, wird dementsprechend die Funktion menschlicher Zug ausgefÃ¼hrt
 		if (spielerTyp[aktuellerSpieler - 1] == MENSCH)
 		{
 			menschlicherZug(spielfeld, aktuellerSpieler);
 			rundenAnzahl++;
 		}
 
-		// Andernfalls muss der aktuelle Spieler ein Computer sein und mit Hilfe der Funktion computerZug wird ein Zug der KI durchgeführt
+		// Andernfalls muss der aktuelle Spieler ein Computer sein und mit Hilfe der Funktion computerZug wird ein Zug der KI durchgefÃ¼hrt
 		else
 		{
 			computerZug(spielfeld, aktuellerSpieler);
